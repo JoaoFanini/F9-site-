@@ -2,6 +2,9 @@
 .como { padding: 24vh 0 14vh; }
 .como__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6vw; align-items: center; }
 .obj--baleia { width: 100%; }
+/* sem WebGL2: a baleia aparece como imagem comum (o mesmo arquivo, sem pontilhado) */
+.no-gl .obj--baleia { aspect-ratio: 4 / 3; background: url(/img/baleia.webp) center / contain no-repeat; }
+.no-gl .obj--lua, .no-gl .obj--servico { min-height: 120px; }
 .prompt {
   margin-top: 46px; border-radius: var(--r-card); padding: 22px 24px 20px;
   background: linear-gradient(180deg, rgba(12, 44, 34, 0.9), rgba(4, 20, 14, 0.9));

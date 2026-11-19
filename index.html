@@ -6,6 +6,10 @@
   <title>F9 Coding · Sites para negócios locais</title>
   <meta name="description" content="A F9 Coding cria sites para negócios locais: prévia sem compromisso, pensado para o celular e para o cliente chamar no WhatsApp." />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script>
+    // sem WebGL2 o pontilhado não existe: marca a página para mostrar a imagem comum no lugar
+    if (!document.createElement('canvas').getContext('webgl2')) document.documentElement.classList.add('no-gl');
+  </script>
   <style>
     /* abertura: o F da marca desenha, preenche e se expande até sair da tela */
     .logo-intro {
