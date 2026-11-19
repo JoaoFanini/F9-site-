@@ -1,0 +1,18 @@
+/* PLANOS: três cartões escuros, o do meio destacado com borda clara e halo. Sem preços fixos (ver README do projeto). */
+.planos { padding: 14vh 0 18vh; text-align: center; }
+.planos .h2 { margin-left: auto; margin-right: auto; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 8vh; text-align: left; }
+.plan {
+  position: relative; display: flex; flex-direction: column; gap: 14px; padding: 34px 30px;
+  border-radius: var(--r-card); border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(180deg, rgba(12, 44, 34, 0.9), rgba(4, 20, 14, 0.9));
+}
+.plan--hi { border-color: rgba(255, 255, 255, 0.55); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 80px rgba(255, 255, 255, 0.12); }
+.plan__selo { position: absolute; top: -12px; left: 30px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: #fff; color: #04140e; padding: 5px 10px; border-radius: 99px; }
+.plan h3 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.03em; }
+.plan__preco { font-size: 1.125rem; color: var(--ink-2); }
+.plan ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 12px; }
+.plan li { position: relative; padding-left: 20px; font-size: 15px; color: var(--ink-2); line-height: 1.4; }
+.plan li::before { content: ''; position: absolute; left: 0; top: 0.42em; width: 5px; height: 5px; background: #fff; }
+.plan .btn { margin-top: auto; justify-content: center; }
+@media (max-width: 900px) { .plans { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; } }

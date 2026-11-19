@@ -1,0 +1,34 @@
+/* LOADER: o contador embaixo da esfera; o mostrador e a esfera nascendo ficam no canvas (gl/world.js).
+   Antes do JS rodar, a posição vem destas contas (as mesmas do layoutHands); depois o JS mede a esfera. */
+.loader {
+  --hh: max(100svh, 620px);
+  --lx: 56.5vw;
+  --r: calc(0.0747 * max(110vw, var(--hh) * 1.95));
+  --sy: calc(var(--hh) * 0.6);
+  --ly: calc(var(--sy) + 1.98 * var(--r));
+  position: fixed; inset: 0; z-index: 60; pointer-events: auto;
+}
+.loader__tag {
+  position: absolute; left: var(--lx); top: var(--ly); translate: -50% 0;
+  display: flex; align-items: center; gap: 10px; white-space: nowrap;
+  font-size: var(--t-micro); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1;
+  color: var(--ink-2);
+  opacity: 0;
+}
+.loader.is-on .loader__tag { opacity: 1; animation: loader-in 0.5s var(--ease-out); }
+.loader__mark { width: 10px; height: 10px; color: #fff; }
+.loader__n { min-width: 4.2ch; text-align: right; color: #fff; font-variant-numeric: tabular-nums; }
+/* antes do JS (rede lenta): a marca pisca no lugar da esfera; com cache ela nem chega a aparecer */
+.loader__boot {
+  position: absolute; left: var(--lx); top: var(--sy); width: 14px; height: 14px; translate: -50% -50%; color: #fff;
+  opacity: 0; animation: loader-boot 1.2s 0.4s steps(2, jump-none) infinite;
+}
+@keyframes loader-boot { 0% { opacity: 0.25; } 100% { opacity: 1; } }
+/* sem WebGL ou com movimento reduzido: tela preta própria, que some por fusão */
+.loader--fusao { background: #04140e; }
+.loader--fusao .loader__tag { top: var(--sy); translate: -50% -50%; }
+@keyframes loader-in { from { opacity: 0; } }
+
+@media (max-width: 760px) {
+  .loader { --hh: max(100svh, 640px); --lx: 50vw; --r: calc(0.0747 * max(230vw, var(--hh) * 1.05)); --sy: calc(var(--hh) * 0.585); }
+}

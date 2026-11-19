@@ -1,0 +1,54 @@
+/* Base: fundo preto, tipografia e a máscara das linhas que sobem. */
+*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: #04140e;
+  color: #fff;
+  font-family: var(--font);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+main, .foot { position: relative; z-index: 2; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0; }
+em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* as linhas do título sobem de dentro desta máscara */
+.line-mask { display: block; overflow: clip; padding: 0.12em 0.04em 0.22em; margin: -0.12em -0.04em -0.22em; }
+
+/* o nav e o texto do hero só aparecem depois do loader (intro.js os traz de volta) */
+.is-loading .nav, .is-loading .hero__foot { opacity: 0; }
+.hero__title:not(.is-gl) { color: #fff; }
+
+/* marca de dois quadrados na diagonal, em CSS (eyebrows e rótulos) */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.875rem; font-weight: 500; letter-spacing: -0.005em; color: var(--ink-2);
+}
+.eyebrow::before {
+  content: ''; width: 12px; height: 12px; flex: none;
+  background:
+    linear-gradient(#fff, #fff) 0 0 / 50% 50% no-repeat,
+    linear-gradient(#fff, #fff) 100% 100% / 50% 50% no-repeat;
+}
+
+.h2 {
+  font-weight: 400; font-size: var(--t-h2); line-height: 0.98; letter-spacing: -0.04em; margin: 22px 0 0;
+}
+.lead { font-size: clamp(1.0625rem, 1.35vw, 1.25rem); line-height: 1.45; color: var(--ink-2); max-width: 36em; }
+.cap { font-size: var(--t-small); color: var(--ink-3); margin-top: 18px; }
+
+section { position: relative; }
+
+/* o canvas do mundo: fixo atrás da página, na altura da tela */
+canvas.world {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100lvh; z-index: 1;
+  pointer-events: none; display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

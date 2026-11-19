@@ -1,0 +1,14 @@
+/* ESTÚDIO (serviços): três colunas, cada uma com um objeto em pontilhado em cima e texto embaixo de um fio. */
+.estudio { padding: 14vh 0 18vh; }
+.servicos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4vw; margin-top: 10vh; }
+.servico { display: flex; flex-direction: column; align-items: center; }
+.obj { position: relative; display: block; }
+.obj--servico { height: clamp(220px, 34vh, 360px); margin: 0 auto; }
+.servico__txt { align-self: stretch; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); }
+.servico__n { font-size: var(--t-micro); font-weight: 500; letter-spacing: 0.08em; color: var(--ink-3); }
+.servico h3 { margin: 10px 0 10px; font-size: 1.5rem; font-weight: 500; letter-spacing: -0.03em; }
+.servico p { color: var(--ink-2); font-size: 15px; }
+@media (max-width: 760px) {
+  .servicos { grid-template-columns: 1fr; gap: 64px; }
+  .obj--servico { height: 240px; }
+}

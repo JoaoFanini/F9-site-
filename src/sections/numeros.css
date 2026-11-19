@@ -1,0 +1,13 @@
+/* NÚMEROS: a lua em pontilhado à esquerda e uma grade 2 × 2 com fios. */
+.numeros { padding: 14vh 0 16vh; }
+.numeros__grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 6vw; align-items: center; }
+.obj--lua { width: 86%; margin: 0 auto; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; margin-top: 44px; border-top: 1px solid var(--line); }
+.stat { padding: 28px 24px 30px 0; border-bottom: 1px solid var(--line); }
+.stat:nth-child(even) { padding-left: 24px; border-left: 1px solid var(--line); }
+.stat__n { display: block; font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 400; letter-spacing: -0.04em; line-height: 1; }
+.stat__l { display: block; margin-top: 12px; font-size: 15px; color: var(--ink-2); line-height: 1.4; }
+@media (max-width: 760px) {
+  .numeros__grid { grid-template-columns: 1fr; gap: 40px; }
+  .obj--lua { width: 60%; }
+}

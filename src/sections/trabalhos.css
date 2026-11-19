@@ -1,0 +1,19 @@
+/* TRABALHOS: seis cartões só com borda (o pontilhado aparece direto sobre o preto). */
+.trabalhos { padding: 16vh 0 14vh; }
+.obras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 10vh; }
+.obra {
+  display: flex; flex-direction: column; gap: 10px; min-height: 230px; padding: 26px;
+  border-radius: var(--r-card); border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(180deg, rgba(12, 44, 34, 0.9), rgba(4, 20, 14, 0.9));
+  transition: border-color 0.4s, transform 0.5s var(--ease-out);
+}
+.obra:hover { border-color: rgba(255, 255, 255, 0.6); transform: translateY(-4px); }
+.obra__nicho { font-size: var(--t-micro); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.obra h3 { font-size: 1.5rem; font-weight: 500; letter-spacing: -0.03em; line-height: 1.1; }
+.obra p { font-family: var(--serif); font-style: italic; font-size: 1.1875rem; color: var(--ink-2); line-height: 1.3; }
+.obra__go { margin-top: auto; font-size: 15px; font-weight: 500; color: #fff; }
+.obra__go::after { content: ' →'; }
+.obra--destaque { border-color: rgba(255, 255, 255, 0.5); }
+.obra__tag { align-self: flex-start; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; background: #fff; color: #04140e; padding: 4px 9px; border-radius: 99px; }
+@media (max-width: 900px) { .obras { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 760px) { .obras { grid-template-columns: 1fr; } }

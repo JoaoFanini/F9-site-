@@ -1,0 +1,25 @@
+/* Tokens: o sistema 1-bit (branco sobre preto). Nada de cor aqui. */
+:root {
+  --black: #04140e;
+  --white: #fff;
+  --ink-2: rgba(255, 255, 255, 0.74);
+  --ink-3: rgba(255, 255, 255, 0.56);
+  --line: rgba(255, 255, 255, 0.16);
+
+  --font: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+
+  --t-hero: min(15.2vw, 31vh);
+  --t-h2: clamp(2.6rem, 5vw, 5.25rem);
+  --t-small: 0.875rem;
+  --t-micro: 0.8125rem;
+  --track-hero: -0.055em;
+
+  --r-btn: 4px;
+  --r-card: 6px;
+
+  --gutter: clamp(20px, 3.6vw, 64px);
+  --maxw: 1360px;
+  --fw-m: max(8px, 2vw);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
